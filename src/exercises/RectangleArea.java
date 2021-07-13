@@ -14,6 +14,8 @@ public class RectangleArea {
 
         double area = length * width;
         System.out.println("Your rectangle has an area of " + area + " units squared.");
+
+        input.close();
     }
 }
 

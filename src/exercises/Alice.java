@@ -22,6 +22,7 @@ public class Alice {
         System.out.println(wordVerified);
 
         System.out.println("The new sentence, without the word " + word + " is: " + aliceLineShorter);
+        input.close();
     }
 
 

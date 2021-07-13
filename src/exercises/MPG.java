@@ -14,5 +14,6 @@ public class MPG {
 
         double mPG = miles / gallons;
         System.out.println("Your vehicle had " + mPG + " miles per gallon in this last period of time.");
+        input.close();
     }
 }
