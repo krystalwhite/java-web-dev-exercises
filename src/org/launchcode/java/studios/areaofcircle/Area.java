@@ -12,5 +12,7 @@ public class Area {
 //        double area = radius * radius * Math.PI;
         double area = Circle.getArea(radius);
         System.out.println("Your circle with a radius of " + radius + " units has an approximate area of " + area + " units squared.");
+
+        input.close();
     }
 }
