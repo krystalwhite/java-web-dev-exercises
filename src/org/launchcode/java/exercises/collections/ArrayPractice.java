@@ -26,5 +26,6 @@ public class ArrayPractice {
         String [] seussSplitSentence = seuss.split("\\.");
         for (int k = 0; k < seussSplitSentence.length; k++) {
             System.out.println(seussSplitSentence[k]);
-        }    }
+        }
+    }
 }
