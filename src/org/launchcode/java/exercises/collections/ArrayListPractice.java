@@ -40,7 +40,7 @@ public class ArrayListPractice {
             }
 
         input.close();
-        
+
 //        this code block doesn't work because List and Arrays don't work
 //        List<String> words = Arrays.asList("words", "containing", "five", "letters", "yahoo");
 //        wordList.addAll(words);
