@@ -40,18 +40,18 @@ public class CountingCharacters {
 
         for (char character : inputString.toUpperCase().toCharArray()) {
 //            character = Character.toLowerCase(character);
-        if (Character.isLetter(character)) {
-            if (result.containsKey(character)) {
-                result.put(character, result.get(character) + 1);
-            } else {
-                result.put(character, 1);
+            if (Character.isLetter(character)) {
+                if (result.containsKey(character)) {
+                    result.put(character, result.get(character) + 1);
+                } else {
+                    result.put(character, 1);
+                }
+            }
+
+            for (Map.Entry<Character, Integer> singleChar : result.entrySet()) {
+                System.out.println(singleChar.getKey() + ": " + singleChar.getValue());
             }
         }
-
-        for (Map.Entry<Character, Integer> singleChar : result.entrySet()) {
-            System.out.println(singleChar.getKey() + ": " + singleChar.getValue());
-        }
     }
-
 
 }
