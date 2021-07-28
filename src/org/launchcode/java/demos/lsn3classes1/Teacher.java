@@ -14,35 +14,35 @@ public class Teacher {
         this.yearsTeaching = yearsTeaching;
     }
 
-    protected String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    protected void setFirstName (String aName) {
+    public void setFirstName (String aName) {
         firstName = aName;
     }
 
-    protected String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    protected void setLastName (String aName) {
+    public void setLastName (String aName) {
         lastName = aName;
     }
 
-    protected String getSubject() {
+    public String getSubject() {
         return subject;
     }
 
-    protected void setSubject (String aSubject) {
+    public void setSubject (String aSubject) {
         subject = aSubject;
     }
 
-    protected int getYearsTeaching() {
+    public int getYearsTeaching() {
         return yearsTeaching;
     }
 
-    protected void setYearsTeaching (int aTotal) {
+    public void setYearsTeaching (int aTotal) {
         yearsTeaching = aTotal;
     }
 }

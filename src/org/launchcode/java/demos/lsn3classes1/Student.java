@@ -36,35 +36,35 @@ public class Student {
 
 
 //    getters and setters for the class
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected void setName (String aName) {
+    public void setName (String aName) {
         name = aName;
     }
 
-    protected int getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
-    protected void setStudentId(int aStudentId) {
+    public void setStudentId(int aStudentId) {
         studentId = aStudentId;
     }
 
-    protected int getNumberOfCredits() {
+    public int getNumberOfCredits() {
         return numberOfCredits;
     }
 
-    protected void setNumberOfCredits(int aNumberOfCredits) {
+    public void setNumberOfCredits(int aNumberOfCredits) {
         numberOfCredits = aNumberOfCredits;
     }
 
-    protected double getGpa() {
+    public double getGpa() {
         return gpa;
     }
 
-    protected void setGpa(double aGpa) {
+    public void setGpa(double aGpa) {
         gpa = aGpa;
     }
 
