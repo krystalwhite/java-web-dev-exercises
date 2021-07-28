@@ -42,4 +42,27 @@ public class CarTest {
         assertTrue(test_car.getGasTankLevel() == 10);
     }
 
+    @Test
+    public void testGasTankAfterDriving() {
+        test_car.drive(50);
+        assertEquals(9, test_car.getGasTankLevel(), 0.001);
+    }
+
+//    not as good because it doesn't actually test gas tank but the effects of the gas tank
+//    something else could have caused the odometer to stop at 500 maybe
+    @Test
+    public void testGasTankAfterExceedingTankRange() {
+        test_car.drive(550);
+        assertTrue(test_car.getOdometer() == 500);
+    }
+
+    @Test
+    public void testGasTankAfterExceedingTankRange2() {
+        test_car.drive(550);
+        assertEquals(test_car.getGasTankLevel(), 0, 0.001);
+    }
+
+
+
+
 }
