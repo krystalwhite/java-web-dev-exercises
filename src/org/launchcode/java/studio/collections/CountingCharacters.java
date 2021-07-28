@@ -1,4 +1,5 @@
 package org.launchcode.java.studio.collections;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,10 +32,15 @@ public class CountingCharacters {
     }
 
 //    Mike's solution to this problem
+//    .toLowerCase only works on non-primitive data types
+//    Character.isLetter
     public static void countChar(String inputString) {
 
         HashMap<Character, Integer> result = new HashMap<>();
-        for (char character : inputString.toCharArray()) {
+
+        for (char character : inputString.toUpperCase().toCharArray()) {
+//            character = Character.toLowerCase(character);
+        if (Character.isLetter(character)) {
             if (result.containsKey(character)) {
                 result.put(character, result.get(character) + 1);
             } else {
