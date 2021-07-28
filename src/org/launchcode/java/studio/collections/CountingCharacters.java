@@ -27,5 +27,25 @@ public class CountingCharacters {
         for (Map.Entry<Character, Integer> c : list.entrySet()) {
             System.out.println(c.getKey() + ": " + c.getValue());
         }
+
     }
+
+//    Mike's solution to this problem
+    public static void countChar(String inputString) {
+
+        HashMap<Character, Integer> result = new HashMap<>();
+        for (char character : inputString.toCharArray()) {
+            if (result.containsKey(character)) {
+                result.put(character, result.get(character) + 1);
+            } else {
+                result.put(character, 1);
+            }
+        }
+
+        for (Map.Entry<Character, Integer> singleChar : result.entrySet()) {
+            System.out.println(singleChar.getKey() + ": " + singleChar.getValue());
+        }
+    }
+
+
 }
