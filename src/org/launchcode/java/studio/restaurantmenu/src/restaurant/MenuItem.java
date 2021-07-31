@@ -1,4 +1,5 @@
 package restaurant;
+import java.time.LocalDate;
 
 public class MenuItem {
 
@@ -39,6 +40,7 @@ public class MenuItem {
         this.price = price;
     }
 
+
     public Boolean getNewItem() {
         return newItem;
     }
@@ -46,4 +48,9 @@ public class MenuItem {
     public void setNewItem(Boolean newItem) {
         this.newItem = newItem;
     }
+
+//other methods
+
+
+
 }
