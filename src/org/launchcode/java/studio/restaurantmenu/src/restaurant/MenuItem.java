@@ -1,18 +1,20 @@
 package restaurant;
 import java.time.LocalDate;
 
+//    MenuItem includes price description, category (appetizer, main course, dessert), whether it's new or not
+
 public class MenuItem {
 
     private String category;
     private String description;
     private Double price;
-    private Boolean newItem = false;
+    private Boolean isNewItem = false;
 
-    public MenuItem (String category, String description, Double price, Boolean newItem) {
+    public MenuItem (String category, String description, Double price, Boolean isNewItem) {
         this.category = category;
         this.description = description;
         this.price = price;
-        this.newItem = newItem;
+        this.isNewItem = isNewItem;
     }
 
 //    getters and setters for Menu Items
@@ -40,13 +42,12 @@ public class MenuItem {
         this.price = price;
     }
 
-
-    public Boolean getNewItem() {
-        return newItem;
+    public Boolean getIsNewItem() {
+        return isNewItem;
     }
 
-    public void setNewItem(Boolean newItem) {
-        this.newItem = newItem;
+    public void setIsNewItem(Boolean isNewItem) {
+        this.isNewItem = isNewItem;
     }
 
 //other methods
