@@ -1,5 +1,8 @@
 package org.launchcode.java.demos.lsn4classes2;
 
+import org.launchcode.java.demos.lsn4classes2.Teacher;
+import exercises.classesAndObjects.school.Teacher;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -19,14 +22,6 @@ public class Course {
 
     public void setTopic(String topic) {
         this.topic = topic;
-    }
-
-    public org.launchcode.java.demos.lsn4classes2.Teacher getProfessor() {
-        return professor;
-    }
-
-    public void setProfessor(org.launchcode.java.demos.lsn4classes2.Teacher professor) {
-        this.professor = professor;
     }
 
     public ArrayList<Student> getEnrolledStudents() {
