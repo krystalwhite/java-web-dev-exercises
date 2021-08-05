@@ -1,14 +1,21 @@
 package restaurant;
+import java.util.Date;
+
+//public void printAllMenuItems();
+//public addMenuItem()  -- call another method to determine when the menu was previously updated
+//removeMenuItem();
+
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<MenuItem> menu;
+    private ArrayList<MenuItem> menu = new ArrayList<>();
     private String publishDateString;
     private String currentDateString;
     private LocalDate lastUpdated;
+    private int lastDateMenuUpdated = new Date().getDay();
 
 //    public Menu(ArrayList<MenuItem> menu, String publishDateString) {
 //        this.menu = menu;
@@ -56,57 +63,43 @@ public class Menu {
 //        }
 //    }
 
+    public void remove (MenuItem itemToRemove) {
+        int index = this.menu.indexOf(itemToRemove);
+        this.menu.remove(index);
+    }
+
+    public void printAllMenuItems (Menu completeMenu) {
+        System.out.println("Appetizers");
+        for (MenuItem item : menu) {
+            if (item.getCategory() == "appetizer") {
+                if (item.getIsNewItem() == true) {
+                    System.out.printf("New Item: ");
+                }
+                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+            }
+        }
+
+        System.out.println("\nMain Entrees");
+        for (MenuItem item : menu) {
+            if (item.getCategory() == "main") {
+                if (item.getIsNewItem() == true) {
+                    System.out.printf("New Item: ");
+                }
+                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+            }
+        }
+
+        System.out.println("\nDesserts");
+        for (MenuItem item : menu) {
+            if (item.getCategory() == "dessert") {
+                if (item.getIsNewItem() == true) {
+                    System.out.printf("New Item: ");
+                }
+                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+            }
+        }
+
+    }
+    }
 
 
-//    creating menu items, combining to make menu
-//    public static void main (String[] args) {
-//        ArrayList<MenuItem> menu = new ArrayList<>();
-//        MenuItem salad = new MenuItem("appetizer", "House salad", 1.99, false);
-//        MenuItem beanSoup = new MenuItem("appetizer", "Vegan black bean soup with chipotle chilis", 3.99, false);
-//        MenuItem hummus = new MenuItem("appetizer", "Hummus with pita triangles", 4.99, true);
-//        MenuItem beanBurger = new MenuItem("main", "Black bean burger with sweet potato fries", 8.99, false);
-//        MenuItem veggieFajitas = new MenuItem("main", "Veggie fajitas with squash, broccoli, peppers, onions", 11.99, true);
-//        MenuItem tiramisu = new MenuItem("dessert", "Tiramisu", 6.99, false);
-//        MenuItem fruitParfait = new MenuItem("dessert", "Fruit parfait with local berries and peaches", 2.99, true);
-//
-//        menu.add(salad);
-//        menu.add(beanBurger);
-//        menu.add(hummus);
-//        menu.add(beanSoup);
-//        menu.add(veggieFajitas);
-//        menu.add(fruitParfait);
-//        menu.add(tiramisu);
-//
-//
-//        System.out.println("Appetizers");
-//        for (MenuItem item : menu) {
-//            if (item.getCategory() == "appetizer") {
-//                if (item.getIsNewItem() == true) {
-//                    System.out.printf("New Item: ");
-//                }
-//                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-//            }
-//        }
-//
-//        System.out.println("\nMain Entrees");
-//        for (MenuItem item : menu) {
-//            if (item.getCategory() == "main") {
-//                if (item.getIsNewItem() == true) {
-//                    System.out.printf("New Item: ");
-//                }
-//                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-//            }
-//        }
-//
-//        System.out.println("\nDesserts");
-//        for (MenuItem item : menu) {
-//            if (item.getCategory() == "dessert") {
-//                if (item.getIsNewItem() == true) {
-//                    System.out.printf("New Item: ");
-//                }
-//                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-//            }
-//        }
-//
-//    }
-}

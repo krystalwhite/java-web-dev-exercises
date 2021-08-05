@@ -5,12 +5,15 @@ import java.time.LocalDate;
 
 public class MenuItem {
 
+    private String name;
     private String category;
     private String description;
     private Double price;
-    private Boolean isNewItem = false;
+    private Boolean isNewItem;
+    //private int dateCreated = new Date().getDay();
 
-    public MenuItem (String category, String description, Double price, Boolean isNewItem) {
+    public MenuItem (String name, String category, String description, Double price, Boolean isNewItem) {
+        this.name = name;
         this.category = category;
         this.description = description;
         this.price = price;
@@ -18,6 +21,12 @@ public class MenuItem {
     }
 
 //    getters and setters for Menu Items
+
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
     public String getCategory() {
         return category;
     }
