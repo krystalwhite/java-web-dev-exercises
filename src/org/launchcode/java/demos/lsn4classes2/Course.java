@@ -1,19 +1,19 @@
 package org.launchcode.java.demos.lsn4classes2;
 
-import org.launchcode.java.demos.lsn4classes2.Teacher;
-import exercises.classesAndObjects.school.Teacher;
+//import org.launchcode.java.demos.lsn4classes2.Teacher;
+//import exercises.classesAndObjects.school.Teacher;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Course {
     private String topic;
-    private Teacher professor;
+    private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
 
-    public Course(String topic, Teacher professor) {
+    public Course(String topic, Teacher instructor) {
         this.topic = topic;
-        this.professor = professor;
+        this.instructor = instructor;
     }
 
     public String getTopic() {
@@ -32,9 +32,17 @@ public class Course {
         this.enrolledStudents = enrolledStudents;
     }
 
+    public org.launchcode.java.demos.lsn4classes2.Teacher getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(org.launchcode.java.demos.lsn4classes2.Teacher instructor) {
+        this.instructor = instructor;
+    }
+
     @Override
     public String toString() {
-        String reply = "The class, " + topic + ", taught by " + professor + ", has these students: " + enrolledStudents;
+        String reply = "The class, " + topic + ", taught by " + instructor.getFirstName() + " " + instructor.getLastName() + ", has these students: " + enrolledStudents;
         return reply;
     }
 
@@ -44,15 +52,30 @@ public class Course {
 
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Course course = (Course) o;
-        return Objects.equals(topic, course.topic) && Objects.equals(professor, course.professor);
+    public boolean equals(Object objectToBeCompared) {
+        if (this == objectToBeCompared) {
+            return true;
+        }
+        if (objectToBeCompared == null) {
+            return false;
+        }
+        if (this.getClass() != objectToBeCompared.getClass())  {
+            return false;
+        }
+//        the (Course) notation is casting the object to become a Course
+        Course newCourse = (Course) objectToBeCompared;
+        if (this.topic == newCourse.getTopic() && this.instructor == newCourse.getInstructor()) {
+         return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topic, professor);
+        return Objects.hash(topic, instructor);
     }
+
+
+
 }

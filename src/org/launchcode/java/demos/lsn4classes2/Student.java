@@ -31,19 +31,37 @@ public class Student {
     }
 
      // Determine the grade level of the student based on numberOfCredits
-    public static String getGradeLevel(int creditsCompleted) {
+//    should not be static because it depends on the instance data
+//    public static String getGradeLevel(int creditsCompleted) {
+//        String gradeLevel = "Freshman";
+//        if (creditsCompleted >= 0 && creditsCompleted < 30) {
+//            gradeLevel = "Freshman";
+//        } else if (creditsCompleted >= 30 && creditsCompleted < 60) {
+//            gradeLevel = "Sophomore";
+//        } else if (creditsCompleted >= 60 && creditsCompleted < 90) {
+//            gradeLevel = "Junior";
+//        } else if (creditsCompleted >= 90) {
+//            gradeLevel = "Senior";
+//        }
+//        return gradeLevel;
+//    }
+
+
+//    make it an instance method because it depends on the data of the object to determine the grade level
+    public String getGradeLevel() {
         String gradeLevel = "Freshman";
-        if (creditsCompleted >= 0 && creditsCompleted < 30) {
+        if (this.numberOfCredits < 30) {
             gradeLevel = "Freshman";
-        } else if (creditsCompleted >= 30 && creditsCompleted < 60) {
+        } else if (this.numberOfCredits >= 30 && this.numberOfCredits < 60) {
             gradeLevel = "Sophomore";
-        } else if (creditsCompleted >= 60 && creditsCompleted < 90) {
+        } else if (this.numberOfCredits >= 60 && this.numberOfCredits < 90) {
             gradeLevel = "Junior";
-        } else if (creditsCompleted >= 90) {
+        } else if (this.numberOfCredits >= 90) {
             gradeLevel = "Senior";
         }
         return gradeLevel;
     }
+
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
@@ -96,15 +114,15 @@ public class Student {
         this.numberOfCredits = numberOfCredits;
     }
 
-    public static void main(String[] args) {
-        Student sally = new Student("Sally",1,1,4.0);
-        System.out.println("The Student class works! " + sally.getName() + " is a student!");
-        System.out.println(sally);
-        sally.addGrade(12, 3.5);
-        System.out.println(sally);
-        sally.addGrade(25, 3.8);
-        System.out.println(sally);
-    }
+//    public static void main(String[] args) {
+//        Student sally = new Student("Sally",1,1,4.0);
+//        System.out.println("The Student class works! " + sally.getName() + " is a student!");
+//        System.out.println(sally);
+//        sally.addGrade(12, 3.5);
+//        System.out.println(sally);
+//        sally.addGrade(25, 3.8);
+//        System.out.println(sally);
+//    }
 
     @Override
     public boolean equals(Object o) {
