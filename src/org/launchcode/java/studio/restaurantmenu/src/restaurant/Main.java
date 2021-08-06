@@ -5,11 +5,11 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Main {
-//calls and instantiates the Menu and MenuItems
-
 
     public static void main(String[] args) {
-        ArrayList<MenuItem> menu = new ArrayList<>();
+        LocalDate menuUpdated = LocalDate.parse("2021-05-15");
+        LocalDate currentDate = LocalDate.now();
+        ArrayList<MenuItem> summerMenuList = new ArrayList<>();
         MenuItem salad = new MenuItem("House Salad", "appetizer", "House salad", 1.99, false);
         MenuItem beanSoup = new MenuItem("Black Bean Soup", "appetizer", "Vegan black bean soup with chipotle chilis", 3.99, false);
         MenuItem hummus = new MenuItem("Hummus", "appetizer", "Hummus with pita triangles", 4.99, true);
@@ -18,49 +18,21 @@ public class Main {
         MenuItem tiramisu = new MenuItem("Tiramisu", "dessert", "Tiramisu", 6.99, false);
         MenuItem fruitParfait = new MenuItem("Seasonal Fruit Parfait", "dessert", "Fruit parfait with local berries and peaches", 2.99, true);
 
-        menu.add(salad);
-        menu.add(beanBurger);
-        menu.add(hummus);
-        menu.add(beanSoup);
-        menu.add(veggieFajitas);
-        menu.add(fruitParfait);
-        menu.add(tiramisu);
+        Menu summerMenu = new Menu(summerMenuList, menuUpdated);
 
+        summerMenu.addItem(salad);
+        summerMenu.addItem(beanBurger);
+        summerMenu.addItem(hummus);
+        summerMenu.addItem(beanSoup);
+        summerMenu.addItem(veggieFajitas);
+        summerMenu.addItem(fruitParfait);
+        summerMenu.addItem(tiramisu);
 
-//        print Menu by Categories
-        System.out.println("Appetizers");
-        for (MenuItem item : menu) {
-            if (item.getCategory() == "appetizer") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-            }
-        }
+//        summerMenu.updateItemAge();
 
-        System.out.println("\nMain Entrees");
-        for (MenuItem item : menu) {
-            if (item.getCategory() == "main") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-            }
-        }
-
-        System.out.println("\nDesserts");
-        for (MenuItem item : menu) {
-            if (item.getCategory() == "dessert") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
-            }
-        }
-
+        summerMenu.printAllMenuItems();
     }
-
-    }
+}
 
 
         //    converting publish date from string to Date form

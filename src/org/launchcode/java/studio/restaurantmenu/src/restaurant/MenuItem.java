@@ -1,5 +1,6 @@
 package restaurant;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 //    MenuItem includes price description, category (appetizer, main course, dessert), whether it's new or not
 
@@ -60,7 +61,26 @@ public class MenuItem {
     }
 
 //other methods
+    public void printMenuItem() {
+        if (this.getIsNewItem() == true) {
+            System.out.printf("New Item: ");
+        }
+        System.out.println(this.getDescription() + " ..... $" + this.getPrice());
+    }
+//    public void updateItemAge() {
+//        LocalDate publishDate = LocalDate.parse(publishDateString);
+//        LocalDate currentDate = LocalDate.now();
+//        long noOfDaysBetween = ChronoUnit.DAYS.between(publishDate, currentDate);
+//
+//        System.out.println(noOfDaysBetween);
+//        for (MenuItem item : menu) {
+//            if (noOfDaysBetween < 60) {
+//                item.setIsNewItem(true);
+//            } else {
+//                item.setIsNewItem(false);
+//            }
+//        }
+
+    }
 
 
-
-}

@@ -1,7 +1,7 @@
 package restaurant;
 import java.util.Date;
 
-//public void printAllMenuItems();
+
 //public addMenuItem()  -- call another method to determine when the menu was previously updated
 //removeMenuItem();
 
@@ -15,8 +15,8 @@ public class Menu {
     private String publishDateString;
     private String currentDateString;
     private LocalDate lastUpdated;
-    private int lastDateMenuUpdated = new Date().getDay();
 
+//    private int lastDateMenuUpdated = new Date().getDay();
 //    public Menu(ArrayList<MenuItem> menu, String publishDateString) {
 //        this.menu = menu;
 //        this.publishDateString = publishDateString;
@@ -27,7 +27,6 @@ public class Menu {
         this.lastUpdated = lastUpdated;
     }
 
-//    getters and setters
     public ArrayList<MenuItem> getMenu() {
         return menu;
     }
@@ -48,56 +47,58 @@ public class Menu {
 
     public void setLastUpdated(LocalDate lastUpdated) { this.lastUpdated = lastUpdated; }
 
-    //    converting publish date from string to Date form
-    LocalDate publishDate = LocalDate.parse(publishDateString);
-//    LocalDate currentDate = LocalDate.parse(currentDateString);
-    LocalDate currentDate = LocalDate.now();
-    long noOfDaysBetween = ChronoUnit.DAYS.between(publishDate, currentDate);
+    //    converting publish date from string to LocalDate form and updating menu item age based on menu publication date
+//    I don't really understand how LocalDate works or how to embed the various methods classes and call them to cascade this overall
+/*
+    public void updateItemAge() {
+        LocalDate publishDate = LocalDate.parse(publishDateString);
+        LocalDate currentDate = LocalDate.now();
+        long noOfDaysBetween = ChronoUnit.DAYS.between(publishDate, currentDate);
 
-//updating menu item age based on menu publication date
-//    public void updateItemAge(MenuItem item) {
-//        if (noOfDaysBetween > 60) {
-//            MenuItem.setNewItem(item) = false;
-//        } else {
-//            MenuItem.setNewItem(item) = true;
+        System.out.println(noOfDaysBetween);
+//        for (MenuItem item : menu) {
+//            if (noOfDaysBetween < 60) {
+//                item.setIsNewItem(true);
+//            } else {
+//                item.setIsNewItem(false);
+//            }
 //        }
-//    }
+
+    }
+*/
+    public void addItem (MenuItem itemToAdd) {
+        this.menu.add(itemToAdd);
+    }
 
     public void remove (MenuItem itemToRemove) {
         int index = this.menu.indexOf(itemToRemove);
         this.menu.remove(index);
     }
 
-    public void printAllMenuItems (Menu completeMenu) {
-        System.out.println("Appetizers");
+    public void printAllMenuItems() {
+//        updateItemAge();
+
+        System.out.println("\nAppetizers");
         for (MenuItem item : menu) {
             if (item.getCategory() == "appetizer") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+                item.printMenuItem();
             }
         }
 
         System.out.println("\nMain Entrees");
         for (MenuItem item : menu) {
             if (item.getCategory() == "main") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+                item.printMenuItem();
             }
         }
 
         System.out.println("\nDesserts");
         for (MenuItem item : menu) {
             if (item.getCategory() == "dessert") {
-                if (item.getIsNewItem() == true) {
-                    System.out.printf("New Item: ");
-                }
-                System.out.println(item.getDescription() + " ..... $" + item.getPrice());
+                item.printMenuItem();
             }
         }
+        System.out.println("\n\tMenu updated on " + this.lastUpdated + ".");
 
     }
     }
