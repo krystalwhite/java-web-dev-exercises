@@ -1,6 +1,7 @@
 package restaurant;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 
 //    MenuItem includes price description, category (appetizer, main course, dessert), whether it's new or not
 
@@ -10,19 +11,18 @@ public class MenuItem {
     private String category;
     private String description;
     private Double price;
-    private Boolean isNewItem;
+    private LocalDate dateCreated;
+    private Boolean isNew;
     //private int dateCreated = new Date().getDay();
 
-    public MenuItem (String name, String category, String description, Double price, Boolean isNewItem) {
+    public MenuItem (String name, String category, String description, Double price, LocalDate dateCreated) {
         this.name = name;
         this.category = category;
         this.description = description;
         this.price = price;
-        this.isNewItem = isNewItem;
+        this.dateCreated = dateCreated;
+        this.isNew = isNew;
     }
-
-//    getters and setters for Menu Items
-
 
     public String getName() { return name; }
 
@@ -52,34 +52,48 @@ public class MenuItem {
         this.price = price;
     }
 
-    public Boolean getIsNewItem() {
-        return isNewItem;
+    public LocalDate getDateCreated() { return dateCreated; }
+
+    public void setDateCreated(LocalDate dateCreated) { this.dateCreated = dateCreated; }
+
+    public Boolean getIsNew() {
+        return isNew;
     }
 
     public void setIsNewItem(Boolean isNewItem) {
-        this.isNewItem = isNewItem;
+        this.isNew = isNewItem;
     }
 
-//other methods
+    public void checkItemNew() {
+        long noOfDaysBetween = ChronoUnit.DAYS.between(getDateCreated(), LocalDate.now());
+        if (noOfDaysBetween > 30) {
+            this.isNew = false;
+        } else {
+            this.isNew = true;
+        }
+    }
+
     public void printMenuItem() {
-        if (this.getIsNewItem() == true) {
+        checkItemNew();
+        if (this.isNew == true) {
             System.out.printf("New Item: ");
         }
         System.out.println(this.getDescription() + " ..... $" + this.getPrice());
     }
-//    public void updateItemAge() {
-//        LocalDate publishDate = LocalDate.parse(publishDateString);
-//        LocalDate currentDate = LocalDate.now();
-//        long noOfDaysBetween = ChronoUnit.DAYS.between(publishDate, currentDate);
-//
-//        System.out.println(noOfDaysBetween);
-//        for (MenuItem item : menu) {
-//            if (noOfDaysBetween < 60) {
-//                item.setIsNewItem(true);
-//            } else {
-//                item.setIsNewItem(false);
-//            }
-//        }
+
+       @Override
+    public boolean equals(Object item) {
+        if (this == item) return true;
+        if (item == null || getClass() != item.getClass()) return false;
+        MenuItem menuItem = (MenuItem) item;
+        return Objects.equals(name, menuItem.name) && Objects.equals(category, menuItem.category) && Objects.equals(description, menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, category, description, price);
+    }
+
 
     }
 
