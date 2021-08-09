@@ -1,4 +1,4 @@
-package org.launchcode.java.exercises.collections;
+package exercises.collections;
 
 public class ArrayPractice {
     public static void main(String[] args) {

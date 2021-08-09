@@ -1,4 +1,4 @@
-package org.launchcode.java.exercises.collections;
+package exercises.collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 
