@@ -10,6 +10,22 @@ public class Laptop extends Computer {
         this.hasStylus = hasStylus;
     }
 
+    public boolean isTablet() {
+        return isTablet;
+    }
+
+    public void setTablet(boolean tablet) {
+        isTablet = tablet;
+    }
+
+    public boolean isHasStylus() {
+        return hasStylus;
+    }
+
+    public void setHasStylus(boolean hasStylus) {
+        this.hasStylus = hasStylus;
+    }
+
     public boolean needsCarryingCase() {
         if (this.getWeight() > 7) {
             return true;

@@ -11,6 +11,26 @@ public class SmartPhone extends Computer {
                 this.hasBlueTooth = hasBlueTooth;
     }
 
+    public boolean isHasBlueTooth() {
+        return hasBlueTooth;
+    }
+
+    public void setHasBlueTooth(boolean hasBlueTooth) {
+        this.hasBlueTooth = hasBlueTooth;
+    }
+
+    public int getCandyCrushLives() {
+        return candyCrushLives;
+    }
+
+    public void setCandyCrushLives(int candyCrushLives) {
+        this.candyCrushLives = candyCrushLives;
+    }
+
+    public void setNumberOfContacts(int numberOfContacts) {
+        this.numberOfContacts = numberOfContacts;
+    }
+
     public void addContact(String name, int phoneNumber) {
         this.numberOfContacts += 1;
     }
