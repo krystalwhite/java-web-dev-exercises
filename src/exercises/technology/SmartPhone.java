@@ -13,6 +13,7 @@ public class SmartPhone extends Computer {
 
     public boolean isHasBlueTooth() {
         return hasBlueTooth;
+
     }
 
     public void setHasBlueTooth(boolean hasBlueTooth) {

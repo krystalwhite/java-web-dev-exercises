@@ -8,6 +8,8 @@ public class Laptop extends Computer {
         super(brandName, ram, price, screenSize, hasKeyboard, weight);
         this.isTablet = isTablet;
         this.hasStylus = hasStylus;
+
+
     }
 
     public boolean isTablet() {
