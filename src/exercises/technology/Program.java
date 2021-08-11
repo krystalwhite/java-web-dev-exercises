@@ -67,6 +67,18 @@ public class Program {
         assertEquals(laptop.isHasKeyboard(), true);
     }
 
+    @Test
+    public void checkHasBluetooth() {
+        SmartPhone smartPhone = new SmartPhone("Moto G Play", 3, 169.99, 6.5, false, 1, true);
+        assertEquals(smartPhone.isHasBlueTooth(), true);
+    }
+
+    @Test
+    public void checkWeight() {
+        SmartPhone smartPhone = new SmartPhone("Moto G Play", 3, 169.99, 6.5, false, 1, true);
+        assertEquals(smartPhone.getWeight(), 1, 0.01);
+    }
+
 
 
 }
