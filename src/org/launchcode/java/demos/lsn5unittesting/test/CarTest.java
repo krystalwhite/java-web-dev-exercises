@@ -17,7 +17,7 @@ public class CarTest {
     //TODO: gasTankLevel is accurate after attempting to drive past tank range
     //TODO: can't have more gas than tank size, expect an exception
 
-    Car test_car;
+    private Car test_car;
     @Before
     public void createCarObject() {
         test_car = new Car("Toyota", "Prius", 10, 50);

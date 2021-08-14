@@ -1,11 +1,16 @@
 package exercises.technology;
 
-public class AbstractEntity {
-    private static int id;
+public abstract class AbstractEntity {
 
-    public AbstractEntity(int id) {
-        this.id = id;
+    private static long idCounter = 0;
+
+    public static synchronized String createID()
+    {
+        return String.valueOf(idCounter++);
     }
 
+    public static long getIdCounter() {
+        return idCounter;
+    }
 
 }
