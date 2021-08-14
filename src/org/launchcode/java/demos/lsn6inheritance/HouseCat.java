@@ -12,7 +12,7 @@ public class HouseCat extends Cat {
         name = aName;
     }
     public boolean isSatisfied() {
-        return !isHungry() && !isTired();
+        return !this.isHungry() && !this.isTired();
     }
 
     @Override

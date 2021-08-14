@@ -1,6 +1,6 @@
 package org.launchcode.java.demos.lsn6inheritance.test;
-import org.launchcode.java.demos.lsn6inheritance.Cat;
 import org.launchcode.java.demos.lsn6inheritance.HouseCat;
+
 import static org.junit.Assert.assertEquals;
 
 public class Test {
