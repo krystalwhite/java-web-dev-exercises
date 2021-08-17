@@ -11,5 +11,9 @@ public class Main {
         System.out.println("Computer ID: " + computer.createID());
         System.out.println("Laptop ID: " + laptop.createID());
         System.out.println("SmartPhone ID: " + smartPhone.createID());
+
+//        System.out.println("Computer ID: " + computer.getIdCounter());
+//        System.out.println("Laptop ID: " + laptop.getIdCounter());
+//        System.out.println("SmartPhone ID: " + smartPhone.getIdCounter());
     }
 }
